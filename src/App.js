@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Header from './components/Header'
+import MovieSearch from './components/MovieSearch'
+import { ApolloProvider } from '@apollo/client';
+import { client } from "./ApolloClient/client";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // return (
+    //   <ApolloProvider client={client}>
+    //     <div className="App">
+    //      <Header title="Movies Desk"/>
+    //  <MovieSearch title='hello'/>
+    //     </div>
+    //   </ApolloProvider>
+    // );
+    <ApolloProvider client={client}>
+    <div className="container">
+     <Header title="Movies Desk"/>
+     <MovieSearch title='hello'/>
     </div>
+    </ApolloProvider>
   );
 }
+
 
 export default App;
